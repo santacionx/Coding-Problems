@@ -1,0 +1,21 @@
+
+#include <iostream>
+using namespace std;
+/*Given a number N and a bit number K, check if the Kth bit of N is set or not. A bit is called set if it is 1. 
+Note: Indexing starts with 0 from LSB (least significant bit) side in the binary representation of the number.*/
+int main() {
+    // check kth bit set or not
+    int m, n,k;
+    cin>>m;
+    while(m>0 and m<=100){
+        cin>>n>>k;
+        // Aprroach 1: set : 1  unset:0  move the n to k-1 pos check with set res:1 Yes
+        // Approach 2: set : 1  move the set bit to k-1 pos and check with n  res:1 Yes
+        if((1&(n>>k-1))==1){
+            cout<<"Yes"<<endl;
+        }else{
+            cout<<"no"<<endl;
+        }
+                m--;
+    }
+}
